@@ -46,7 +46,7 @@ app.get("/api/v2/joyas", (req, res) => {
 
 app.get("/api/v2/joyas/:id", (req, res) => {
     const { id } = req.params;
-    const joya = joyas.find((joya) => joya.id == id);
+    const joya = { ...joyas.find((joya) => joya.id == id) };
     const { fields } = req.query;
 
     if (!joya) {
